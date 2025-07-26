@@ -1,2 +1,3 @@
-# nix-dotfiles
-Nix dotfiles for the developer happiness 
+# Nix Dotfiles
+
+Flake-based Nix dotfiles focused on simplicity, modularity and developer happiness.

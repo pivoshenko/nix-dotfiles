@@ -1,0 +1,111 @@
+# Nix
+.gcroots
+.direnv/
+.envrc.cache
+
+# Secrets
+secrets/secrets.yaml
+secrets/*.age
+secrets/*.asc
+*.key
+*.pem
+*.p12
+*.pfx
+.ssh/id_*
+.ssh/known_hosts
+.gnupg/
+local/
+
+# Environments
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editors and IDEs
+.vscode
+.idea/
+.vim/
+
+# OS
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Cache directories
+.cache/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Generated documentation
+docs/_build/
+docs/.doctrees/
+
+# Backup files from editors
+*~
+*.orig
+*.rej
+
+# macOS
+.com.apple.timemachine.donotpresent
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.AppleDouble
+.LSOverride
+Icon?
+
+# Linux
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Windows
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Age/sops keys
+keys.txt
+key.age
