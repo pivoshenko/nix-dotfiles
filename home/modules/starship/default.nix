@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   programs.starship = {
@@ -36,7 +36,7 @@
       };
 
       directory = {
-        read_only = " ";
+        read_only = "  ";
         truncation_length = 4;
         style = "bold mauve";
       };

@@ -1,26 +1,28 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   catppuccin = {
     enable = true;
-    flavor = "macchiato";
     accent = "mauve";
+    flavor = "macchiato";
 
-    hyprland = {
-      enable = true;
-      flavor = "macchiato";
-      accent = "mauve";
-    };
+    fish.enable = true;
+    ghostty.enable = true;
+    helix.enable = true;
+    hyprland.enable = true;
+    hyprlock.enable = true;
+    spotify-player.enable = true;
+    starship.enable = true;
+    vesktop.enable = true;
+    zed.enable = true;
 
-    hyprlock = {
+    gtk = {
       enable = true;
-      flavor = "macchiato";
-      accent = "mauve";
-    };
-
-    starship = {
-      enable = true;
-      flavor = "macchiato";
+      gnomeShellTheme = true;
+      size = "compact";
+      icon = {
+        enable = true;
+      };
     };
   };
 }

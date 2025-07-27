@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   fonts.fontconfig.enable = true;
@@ -24,7 +24,8 @@
     material-icons
 
     # Nerd fonts
-    nerd-fonts.iosevka
+    nerd-fonts.iosevka-term
+    nerd-fonts.space-mono
     nerd-fonts.jetbrains-mono
   ];
 }

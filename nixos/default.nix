@@ -2,12 +2,13 @@
 
 {
   imports = [
-    ./modules/desktop
+    ./modules/catppuccin
     ./modules/fonts
+    ./modules/gnome
     ./modules/hardware
-    ./modules/services
+    ./modules/hyprland
     ./modules/system
-    ./modules/themes
+    ./modules/xserver
   ];
 
   environment.systemPackages = with pkgs; [

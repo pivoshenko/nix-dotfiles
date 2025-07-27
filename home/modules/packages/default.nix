@@ -1,17 +1,23 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
-    # IDEs
-    helix
-    neovim
+    # == Applications ==
+    # Password manager
+    nordpass
+    # Knowledge base and notes manager
+    obsidian
+    # Cloud-based messaging application
+    telegram-desktop
+    # Alternative Discord client
+    vesktop
+    # == IDEs ==
+    # Database management tool
+    dbeaver-bin
+    mongodb-compass
+    # API testing and development tool
+    insomnia
+    # Code editor
     vscode
-    zed-editor
-
-    # Shell
-    starship
-
-    # Terminal
-    ghostty
   ];
 }
