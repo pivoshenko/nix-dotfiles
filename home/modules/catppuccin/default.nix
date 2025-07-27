@@ -15,14 +15,5 @@
     starship.enable = true;
     vesktop.enable = true;
     zed.enable = true;
-
-    gtk = {
-      enable = true;
-      gnomeShellTheme = true;
-      size = "compact";
-      icon = {
-        enable = true;
-      };
-    };
   };
 }
