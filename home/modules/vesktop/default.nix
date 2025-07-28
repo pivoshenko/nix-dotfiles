@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  gtk = {
+  programs.vesktop = {
     enable = true;
   };
 }

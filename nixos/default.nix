@@ -15,6 +15,7 @@
     curl
     git
     gnupg
+    pinentry-all
     unzip
     vim
     wget

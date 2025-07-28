@@ -6,7 +6,11 @@
     accent = "mauve";
     flavor = "macchiato";
 
+    bat.enable = true;
+    bottom.enable = true;
+    delta.enable = true;
     fish.enable = true;
+    fzf.enable = true;
     ghostty.enable = true;
     helix.enable = true;
     hyprland.enable = true;

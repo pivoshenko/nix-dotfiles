@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  gtk = {
+  programs.git.delta = {
     enable = true;
   };
 }

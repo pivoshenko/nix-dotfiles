@@ -1,5 +1,6 @@
 { config, lib, pkgs, ... }:
 
+# TODO Espanso deamon is not running
 {
   services.espanso = {
     enable = true;
@@ -11,6 +12,7 @@
             trigger = ":date";
             replace = "{{currentdate}}";
           }
+
           # == Git ==
           {
             trigger = ":gcbldu";

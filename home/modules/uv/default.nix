@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  gtk = {
+  programs.uv = {
     enable = true;
   };
 }

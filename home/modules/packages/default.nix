@@ -9,8 +9,7 @@
     obsidian
     # Cloud-based messaging application
     telegram-desktop
-    # Alternative Discord client
-    vesktop
+
     # == IDEs ==
     # Database management tool
     dbeaver-bin
@@ -19,5 +18,22 @@
     insomnia
     # Code editor
     vscode
+
+    # == Programming Languages ==
+    elixir
+    erlang
+    gcc
+    gleam
+    lua
+    rustup
+
+    # == Databases ==
+    duckdb
+
+    # == CLIs ==
+    # Tool to interact with exercism.io
+    exercism
+    # Generator for LS_COLORS
+    vivid
   ];
 }
