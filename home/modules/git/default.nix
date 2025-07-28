@@ -18,7 +18,7 @@
     };
 
     extraConfig = {
-      commit.gpgsign = false;
+      commit.gpgsign = true;
 
       core = {
         autocrlf = "input";
