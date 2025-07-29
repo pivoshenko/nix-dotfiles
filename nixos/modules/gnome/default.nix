@@ -12,4 +12,5 @@
 
   # Disable GNOME SSH agent (conflicts with other agents)
   services.gnome.gcr-ssh-agent.enable = false;
+  services.gnome.gnome-keyring.enable = true;
 }

@@ -25,8 +25,10 @@
     ./modules/helix
     ./modules/packages
     ./modules/poetry
+    ./modules/qt
     ./modules/spicetify
     ./modules/starship
+    ./modules/stylix
     ./modules/uv
     ./modules/vesktop
     ./modules/zed

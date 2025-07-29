@@ -17,6 +17,7 @@
       "log"
       "lua"
       "material-icon-theme"
+      "nix"
       "ruff"
       "sql"
       "toml"
@@ -29,15 +30,10 @@
       vim_mode = true;
 
       # == Fonts ==
-      buffer_font_family = "JetBrainsMono Nerd Font";
+      buffer_font_family = config.stylix.fonts.monospace.name;
       buffer_font_size = 16;
-      ui_font_family = "JetBrainsMono Nerd Font";
+      ui_font_family = config.stylix.fonts.monospace.name;
       ui_font_size = 16;
-
-      # == Theme ==
-      theme = {
-        mode = "system";
-      };
 
       # == Editor ==
       relative_line_numbers = true;

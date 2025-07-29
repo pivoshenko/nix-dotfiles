@@ -13,8 +13,5 @@
       rotatingCoverart
       pointer
     ];
-
-    theme = inputs.spicetify-nix.legacyPackages.${pkgs.system}.themes.catppuccin;
-    colorScheme = "macchiato";
   };
 }

@@ -10,8 +10,8 @@
     enableFishIntegration = true;
     enableScDaemon = false;
 
-    defaultCacheTtl = 14400;
-    maxCacheTtl = 86400;
+    defaultCacheTtl = 31536000;
+    maxCacheTtl = 31536000;
 
     pinentry.package = pkgs.pinentry-curses;
   };
