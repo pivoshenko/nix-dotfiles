@@ -43,7 +43,7 @@
       ghostty.enable = false;
       helix.enable = false;
       hyprland.enable = false;
-      hyprlock.enable = false;
+      k9s.enable = true;
       spicetify.enable = false;
       starship.enable = false;
       vscode.enable = false;

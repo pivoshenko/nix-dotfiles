@@ -25,9 +25,10 @@
     ./modules/gh
     ./modules/ghostty
     ./modules/git
-    ./modules/gnupg
     ./modules/gtk
     ./modules/helix
+    ./modules/k9s
+    ./modules/keychain
     ./modules/packages
     ./modules/poetry
     ./modules/qt

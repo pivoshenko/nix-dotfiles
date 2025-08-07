@@ -10,9 +10,10 @@
     ./modules/catppuccin
     ./modules/fonts
     ./modules/gnome
+    ./modules/gnupg
     ./modules/hardware
     ./modules/hyprland
-    ./modules/security
+    ./modules/ssh
     ./modules/system
     ./modules/xserver
   ];
@@ -30,6 +31,7 @@
   programs = {
     firefox.enable = true;
     fish.enable = true;
+    nix-ld.enable = true;
   };
 
   nix.settings.experimental-features = [

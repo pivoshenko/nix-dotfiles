@@ -1,0 +1,63 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+
+{
+  programs.k9s = {
+    enable = true;
+
+    settings = {
+      k9s = {
+        liveViewAutoRefresh = false;
+        screenDumpDir = "/tmp/dumps";
+        refreshRate = 2;
+        apiServerTimeout = "15s";
+        maxConnRetry = 5;
+        readOnly = false;
+        defaultView = "";
+        noExitOnCtrlC = false;
+
+        ui = {
+          enableMouse = false;
+          headless = false;
+          logoless = false;
+          crumbsless = false;
+          splashless = false;
+          noIcons = false;
+          reactive = false;
+          defaultsToFullScreen = false;
+        };
+
+        logger = {
+          tail = 200;
+          buffer = 500;
+          sinceSeconds = 300;
+          textWrap = false;
+          disableAutoscroll = false;
+          showTime = false;
+        };
+
+        shellPod = {
+          image = "killerAdmin";
+          namespace = "default";
+          limits = {
+            cpu = "100m";
+            memory = "100Mi";
+          };
+          tty = true;
+          hostPathVolume = [
+            {
+              name = "docker-socket";
+              mountPath = "/var/run/docker.sock";
+              hostPath = "/var/run/docker.sock";
+              readOnly = true;
+            }
+          ];
+        };
+      };
+    };
+  };
+}

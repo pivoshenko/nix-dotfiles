@@ -35,6 +35,9 @@
     # == Databases ==
     duckdb
 
+    # == Orchestration ==
+    minikube
+
     # == CLIs ==
     # Tool to interact with exercism.io
     exercism

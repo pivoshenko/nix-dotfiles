@@ -18,6 +18,7 @@
     fzf.enable = true;
     ghostty.enable = true;
     helix.enable = true;
+    k9s.enable = true;
     spotify-player.enable = true;
     starship.enable = true;
     vesktop.enable = true;
