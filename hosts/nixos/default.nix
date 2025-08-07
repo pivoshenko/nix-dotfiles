@@ -1,5 +1,12 @@
-{ config, inputs, lib, pkgs, ... }:
+{
+  config,
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 
+# TODO Add system auto upgrade
 {
   imports = [
     ../../nixos
@@ -7,12 +14,6 @@
   ];
 
   networking.hostName = "nixos";
-
-  programs = {
-    firefox.enable = true;
-    fish.enable = true;
-    ssh.startAgent = true;
-  };
 
   system.stateVersion = "25.05";
 

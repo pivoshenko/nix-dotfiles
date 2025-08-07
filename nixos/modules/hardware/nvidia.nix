@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # Environment variables for Nvidia and Wayland compatibility
@@ -11,13 +16,13 @@
   };
 
   environment.systemPackages = with pkgs; [
-    glxinfo  # OpenGL/GLX information utility
-    intel-gpu-tools  # Intel GPU debugging and profiling tools
-    nvtopPackages.intel  # htop-like monitor for Intel GPUs
-    nvtopPackages.nvidia  # htop-like monitor for Nvidia GPUs
-    pciutils  # PCI device utilities (lspci command)
-    usbutils  # USB device utilities (lsusb command)
-    vulkan-tools  # Vulkan API debugging and testing tools
+    glxinfo # OpenGL/GLX information utility
+    intel-gpu-tools # Intel GPU debugging and profiling tools
+    nvtopPackages.intel # htop-like monitor for Intel GPUs
+    nvtopPackages.nvidia # htop-like monitor for Nvidia GPUs
+    pciutils # PCI device utilities (lspci command)
+    usbutils # USB device utilities (lsusb command)
+    vulkan-tools # Vulkan API debugging and testing tools
   ];
 
   hardware.nvidia = {

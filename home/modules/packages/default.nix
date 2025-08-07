@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
@@ -19,7 +24,7 @@
     # Code editor
     vscode
 
-    # == Programming Languages ==
+    # == Programming languages ==
     elixir
     erlang
     gcc
@@ -35,5 +40,9 @@
     exercism
     # Generator for LS_COLORS
     vivid
+
+    # == LSPs ==
+    # Nix code formatter
+    nixfmt-rfc-style
   ];
 }

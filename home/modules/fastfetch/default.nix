@@ -1,5 +1,11 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
+# TODO Replace hard coded colors with Stylix color
 {
   programs.fastfetch = {
     enable = true;
@@ -8,12 +14,12 @@
       logo = {
         type = "data";
         source = lib.mkForce ''
-$3
-$3 /| ､
-$3(°､ ｡ 7
-$3 |､  ~ヽ
-$3 じしf_,)〳
-$3
+          $3
+          $3 /| ､
+          $3(°､ ｡ 7
+          $3 |､  ~ヽ
+          $3 じしf_,)〳
+          $3
         '';
         color = {
           "3" = "38;2;202;158;230";

@@ -1,17 +1,17 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   programs.spicetify = {
     enable = true;
 
-    enabledCustomApps = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.apps; [
-      newReleases
-      ncsVisualizer
-    ];
+    enabledCustomApps = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.apps; [ ];
 
-    enabledSnippets = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.snippets; [
-      rotatingCoverart
-      pointer
-    ];
+    enabledSnippets = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.snippets; [ ];
   };
 }

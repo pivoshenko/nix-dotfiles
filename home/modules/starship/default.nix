@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   programs.starship = {
@@ -26,6 +31,11 @@
 
       c = {
         symbol = " ";
+      };
+
+      character = {
+        success_symbol = "[❯](bold mauve)";
+        vimcmd_symbol = "[❮](bold mauve)";
       };
 
       conda = {
@@ -79,8 +89,12 @@
         disabled = false;
       };
 
+      git_status = {
+        deleted = "✘ ";
+      };
+
       golang = {
-        symbol = " ";
+        symbol = "";
       };
 
       gleam = {
@@ -135,7 +149,7 @@
       };
 
       nix_shell = {
-        symbol = "󱄅 ";
+        symbol = "󱄅";
       };
 
       nodejs = {
@@ -176,9 +190,8 @@
       };
 
       shell = {
-        zsh_indicator = "󰊠";
-        fish_indicator = "󰊠";
-        style = "green bold";
+        fish_indicator = "";
+        style = "lavender bold";
         disabled = false;
       };
 

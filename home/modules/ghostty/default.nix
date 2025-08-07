@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   programs.ghostty = {
@@ -30,7 +35,6 @@
       shell-integration = "fish";
 
       # == Window ==
-      window-decoration = "client";
       window-theme = "system";
       window-title-font-family = "JetBrainsMono Nerd Font";
     };

@@ -1,6 +1,11 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
-# TODO Espanso deamon is not running
+# TODO Espanso daemon is not running
 {
   services.espanso = {
     enable = true;
@@ -42,7 +47,9 @@
           {
             name = "currentdate";
             type = "date";
-            params = { format = "%Y%m%d"; };
+            params = {
+              format = "%Y%m%d";
+            };
           }
         ];
       };

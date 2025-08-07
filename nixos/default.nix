@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -7,6 +12,7 @@
     ./modules/gnome
     ./modules/hardware
     ./modules/hyprland
+    ./modules/security
     ./modules/system
     ./modules/xserver
   ];
@@ -16,13 +22,20 @@
     git
     gnupg
     pinentry-curses
-    unzip
     vim
     wget
-    zip
     home-manager
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  programs = {
+    firefox.enable = true;
+    fish.enable = true;
+  };
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   nixpkgs.config.allowUnfree = true;
 }

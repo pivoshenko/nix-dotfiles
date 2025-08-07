@@ -1,8 +1,14 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   programs.fish = {
     enable = true;
+
     generateCompletions = true;
 
     plugins = [
@@ -30,11 +36,14 @@
 
     interactiveShellInit = ''
       # == Exports ==
+
       set -Ux XDG_CONFIG_HOME $HOME/.config
       set -Ux EDITOR hx
       set -Ux VISUAL $EDITOR
+
       # Get the current terminal and set it for GPG
       set -Ux GPG_TTY (tty)
+
       # Update default colors
       set -Ux LS_COLORS $(vivid generate catppuccin-macchiato)
 
@@ -46,12 +55,12 @@
           fd -H -e ".bak" -t f -x rm
       end
 
-      # Iterate over sub-directories and pull `git` repositories
+      # Iterate over sub-directories and pull Git repositories
       function rgp
           find . -name ".git" -type d | sed 's/\/\.git//' | xargs -P10 -I{} sh -c 'git -C {} fetch --all && git -C {} pull'
       end
 
-      # Reload `fish` configuration
+      # Reload Fish configuration
       function fish
         source ~/.config/fish/config.fish
       end
@@ -62,6 +71,7 @@
       end
 
       # == Vim Mode ==
+
       function fish_user_key_bindings
           # Execute this once per mode that `emacs` bindings should be used in
           fish_default_key_bindings -M insert
@@ -73,7 +83,7 @@
           fish_vi_key_bindings --no-erase insert
       end
 
-      # Emulates `vim`'s cursor shape behavior
+      # Emulates Vim's cursor shape behavior
       set fish_cursor_default block
       # Set the insert mode cursor to a line
       set fish_cursor_insert line

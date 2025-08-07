@@ -7,8 +7,7 @@
 
 {
   imports = [
-    ./audio.nix
-    ./nvidia.nix
-    ./printing.nix
+    ./gnupg.nix
+    ./ssh.nix
   ];
 }

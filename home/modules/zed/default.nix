@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   programs.zed-editor = {
@@ -121,7 +126,7 @@
       # == File Types ==
       file_types = {
         SQL = [ "*.sql.j2" ];
-        TOML = [ "poetry.lock" ];
+        TOML = [ "poetry.lock" "uv.lock" ];
       };
 
       # == Telemetry ==
