@@ -28,6 +28,8 @@
 
     shellAliases = {
       cat = "bat";
+      grep = "rg";
+      find = "fd";
       ls = "eza";
       ld = "lazydocker";
       lg = "lazygit";
@@ -43,6 +45,9 @@
 
       # Get the current terminal and set it for GPG
       set -Ux GPG_TTY (tty)
+
+      # Ensure gpg-agent knows about the current TTY
+      gpg-connect-agent updatetty /bye >/dev/null 2>&1
 
       # Update default colors
       set -Ux LS_COLORS $(vivid generate catppuccin-macchiato)

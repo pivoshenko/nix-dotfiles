@@ -7,11 +7,13 @@
 
 {
   home.packages = with pkgs; [
+    # == Desktop Environment ==
+    # Classic cursor theme with a flying style
+    volantes-cursors
+
     # == Applications ==
     # Password manager
     nordpass
-    # Knowledge base and notes manager
-    obsidian
     # Cloud-based messaging application
     telegram-desktop
 
@@ -22,7 +24,7 @@
     # API testing and development tool
     insomnia
     # Code editor
-    vscode
+    vscode # TODO Replace with programs.vscode
 
     # == Programming languages ==
     elixir
@@ -41,11 +43,23 @@
     # == CLIs ==
     # Tool to interact with exercism.io
     exercism
+    # Graph visualization tools
+    graphviz
+    # Tool for generating terminal GIFs with code
+    vhs
     # Generator for LS_COLORS
-    vivid
+    vivid # TODO Replace with programs.vivid
 
     # == LSPs ==
+    # Language server for Markdown
+    marksman
+    # TOML toolkit written in Rust
+    taplo
     # Nix code formatter
     nixfmt-rfc-style
+    # SQL linter and auto-formatter
+    sqlfluff
+    # Language Server for YAML
+    yaml-language-server
   ];
 }

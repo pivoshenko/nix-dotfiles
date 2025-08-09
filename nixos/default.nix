@@ -22,10 +22,10 @@
     curl
     git
     gnupg
+    home-manager
     pinentry-curses
     vim
     wget
-    home-manager
   ];
 
   programs = {

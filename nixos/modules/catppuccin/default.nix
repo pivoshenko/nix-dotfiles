@@ -13,5 +13,6 @@
 
     grub.enable = true;
     plymouth.enable = true;
+    tty.enable = true;
   };
 }

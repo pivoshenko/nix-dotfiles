@@ -126,7 +126,10 @@
       # == File Types ==
       file_types = {
         SQL = [ "*.sql.j2" ];
-        TOML = [ "poetry.lock" "uv.lock" ];
+        TOML = [
+          "poetry.lock"
+          "uv.lock"
+        ];
       };
 
       # == Telemetry ==

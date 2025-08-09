@@ -6,7 +6,6 @@
 }:
 
 {
-  # Enable X11 windowing system
   services.xserver.enable = true;
 
   services.xserver.xkb = {
