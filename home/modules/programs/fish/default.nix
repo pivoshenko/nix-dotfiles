@@ -28,6 +28,8 @@
 
     shellAliases = {
       cat = "bat";
+      grep = "rg";
+      find = "fd";
       ls = "eza";
       ld = "lazydocker";
       lg = "lazygit";
@@ -36,42 +38,36 @@
 
     interactiveShellInit = ''
       # == Exports ==
-
       set -Ux XDG_CONFIG_HOME $HOME/.config
       set -Ux EDITOR hx
       set -Ux VISUAL $EDITOR
-
       # Get the current terminal and set it for GPG
       set -Ux GPG_TTY (tty)
-
+      # Ensure gpg-agent knows about the current TTY
+      gpg-connect-agent updatetty /bye >/dev/null 2>&1
       # Update default colors
       set -Ux LS_COLORS $(vivid generate catppuccin-macchiato)
 
       # == Functions ==
-
       # Delete backup files
       function bakclean
           fd -H -e ".dotdropbak" -t f -x rm
           fd -H -e ".bak" -t f -x rm
       end
-
       # Iterate over sub-directories and pull Git repositories
       function rgp
           find . -name ".git" -type d | sed 's/\/\.git//' | xargs -P10 -I{} sh -c 'git -C {} fetch --all && git -C {} pull'
       end
-
       # Reload Fish configuration
       function fish
         source ~/.config/fish/config.fish
       end
-
       # Display system information on shell startup
       function fish_greeting
           fastfetch
       end
 
       # == Vim Mode ==
-
       function fish_user_key_bindings
           # Execute this once per mode that `emacs` bindings should be used in
           fish_default_key_bindings -M insert
@@ -82,7 +78,6 @@
           # The argument specifies the initial mode (`insert`, `default` or `visual`)
           fish_vi_key_bindings --no-erase insert
       end
-
       # Emulates Vim's cursor shape behavior
       set fish_cursor_default block
       # Set the insert mode cursor to a line

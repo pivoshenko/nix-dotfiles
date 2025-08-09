@@ -9,37 +9,54 @@
   imports = [
     inputs.catppuccin.homeModules.catppuccin
     inputs.spicetify-nix.homeManagerModules.default
-    inputs.zen-browser.homeModules.twilight
     inputs.stylix.homeModules.stylix
-    ./modules/bat
-    ./modules/bottom
-    ./modules/catppuccin
-    ./modules/delta
-    ./modules/espanso
-    ./modules/eza
-    ./modules/fastfetch
-    ./modules/fd
-    ./modules/fish
+    inputs.zen-browser.homeModules.twilight
+
     ./modules/fonts
-    ./modules/fzf
-    ./modules/gh
-    ./modules/ghostty
-    ./modules/git
-    ./modules/gtk
-    ./modules/helix
-    ./modules/k9s
-    ./modules/keychain
     ./modules/packages
-    ./modules/poetry
-    ./modules/qt
-    ./modules/spicetify
-    ./modules/starship
-    ./modules/stylix
-    ./modules/uv
-    ./modules/vesktop
-    ./modules/zed
-    ./modules/zen
-    ./modules/zoxide
+
+    # == Desktop ==
+    ./modules/desktop/gtk
+    ./modules/desktop/qt
+
+    # == Programs ==
+    ./modules/programs/bat
+    ./modules/programs/bottom
+    ./modules/programs/delta
+    ./modules/programs/eza
+    ./modules/programs/fastfetch
+    ./modules/programs/fd
+    ./modules/programs/fish
+    ./modules/programs/fzf
+    ./modules/programs/gh
+    ./modules/programs/ghostty
+    ./modules/programs/git
+    ./modules/programs/helix
+    ./modules/programs/jq
+    ./modules/programs/k9s
+    ./modules/programs/keychain
+    ./modules/programs/lazydocker
+    ./modules/programs/lazygit
+    ./modules/programs/obsidian
+    ./modules/programs/poetry
+    ./modules/programs/ripgrep
+    ./modules/programs/spicetify
+    ./modules/programs/starship
+    ./modules/programs/uv
+    ./modules/programs/vesktop
+    ./modules/programs/yazi
+    ./modules/programs/zed
+    ./modules/programs/zellij
+    ./modules/programs/zen
+    ./modules/programs/zoxide
+
+    # == Services ==
+    ./modules/services/espanso
+    ./modules/services/gpg-agent
+
+    # == Themes ==
+    ./modules/themes/catppuccin
+    ./modules/themes/stylix
   ];
 
   home.username = "pivoshenko";

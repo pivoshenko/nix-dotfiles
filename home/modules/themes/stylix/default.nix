@@ -12,7 +12,7 @@
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
 
-    image = ../../assets/wallpapers/logo/logo_00.png;
+    image = ../wallpapers/logo/logo_00.png;
 
     fonts = {
       serif = {
@@ -43,11 +43,13 @@
       ghostty.enable = false;
       helix.enable = false;
       hyprland.enable = false;
-      k9s.enable = true;
-      spicetify.enable = false;
+      k9s.enable = false;
+      spicetify.enable = true;
       starship.enable = false;
       vscode.enable = false;
+      yazi.enable = false;
       zed.enable = false;
+      zellij.enable = false;
     };
   };
 }

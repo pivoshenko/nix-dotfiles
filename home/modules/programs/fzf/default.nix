@@ -5,7 +5,6 @@
   ...
 }:
 
-# TODO Resolve issue with invalid border colors
 {
   programs.fzf = {
     enable = true;
