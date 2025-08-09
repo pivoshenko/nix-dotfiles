@@ -15,6 +15,7 @@
     extraFlags = [
       "--nogui"
       "--quick"
+      "--quiet"
     ];
   };
 }
