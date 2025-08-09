@@ -5,7 +5,9 @@
   ...
 }:
 
-# TODO Replace hard coded colors with Stylix color
+let
+  colorMauve = "38;2;${config.lib.stylix.colors.base0E-rgb-r};${config.lib.stylix.colors.base0E-rgb-g};${config.lib.stylix.colors.base0E-rgb-b}";
+in
 {
   programs.fastfetch = {
     enable = true;
@@ -22,7 +24,7 @@
           $3
         '';
         color = {
-          "3" = "38;2;202;158;230";
+          "3" = colorMauve;
         };
       };
 
@@ -34,31 +36,31 @@
         {
           type = "os";
           key = "";
-          keyColor = "38;2;202;158;230";
+          keyColor = colorMauve;
           format = "{name} {version}";
         }
         {
           type = "cpu";
           key = "󰘚";
-          keyColor = "38;2;202;158;230";
+          keyColor = colorMauve;
           showPeCoreCount = true;
           temp = true;
         }
         {
           type = "gpu";
           key = "󰡷";
-          keyColor = "38;2;202;158;230";
+          keyColor = colorMauve;
           temp = true;
         }
         {
           type = "memory";
           key = "󰍛";
-          keyColor = "38;2;202;158;230";
+          keyColor = colorMauve;
         }
         {
           type = "disk";
           key = "󰋊";
-          keyColor = "38;2;202;158;230";
+          keyColor = colorMauve;
           folders = "/";
         }
         {
@@ -67,7 +69,7 @@
         {
           type = "media";
           key = "";
-          keyColor = "38;2;202;158;230";
+          keyColor = colorMauve;
         }
       ];
     };
