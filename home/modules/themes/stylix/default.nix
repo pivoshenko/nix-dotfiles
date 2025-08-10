@@ -40,8 +40,11 @@
     };
 
     targets = {
-      bat.enable = false;
+      # == Desktop ==
       gtk.enable = true;
+      qt.enable = false;
+
+      bat.enable = false;
       firefox.enable = false;
       fish.enable = false;
       fzf.enable = false;

@@ -5,7 +5,9 @@
 
 {
   qt = {
-    style.name = lib.mkForce "kvantum";
-    platformTheme.name = lib.mkForce "kvantum";
+    enable = true;
+
+    style.name = "kvantum";
+    platformTheme.name = "kvantum";
   };
 }
