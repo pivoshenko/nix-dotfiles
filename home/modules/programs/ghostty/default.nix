@@ -1,4 +1,5 @@
 {
+  config,
   ...
 }:
 
@@ -19,7 +20,7 @@
       cursor-style = "bar";
 
       # == Fonts ==
-      font-family = "JetBrainsMono Nerd Font";
+      font-family = config.stylix.fonts.monospace.name;
       font-feature = [
         "calt"
         "clig"
@@ -33,7 +34,7 @@
 
       # == Window ==
       window-theme = "system";
-      window-title-font-family = "JetBrainsMono Nerd Font";
+      window-title-font-family = config.stylix.fonts.monospace.name;
     };
   };
 }
