@@ -6,6 +6,7 @@
 {
   stylix = {
     enable = true;
+    autoEnable = true;
 
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
@@ -40,6 +41,7 @@
 
     targets = {
       bat.enable = false;
+      gtk.enable = true;
       firefox.enable = false;
       fish.enable = false;
       fzf.enable = false;
