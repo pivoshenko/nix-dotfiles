@@ -47,6 +47,7 @@
       fzf.enable = false;
       ghostty.enable = false;
       helix.enable = false;
+      hyprland.enable = false;
       k9s.enable = false;
       lazygit.enable = false;
       starship.enable = false;
