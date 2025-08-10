@@ -1,5 +1,7 @@
 {
+  config,
   pkgs,
+  lib,
   ...
 }:
 
@@ -7,53 +9,70 @@
   programs.vscode = {
     enable = true;
 
-    extensions = with pkgs.vscode-marketplace; [
-      catppuccin.catppuccin-vsc
-      charliermarsh.ruff
-      dorzey.vscode-sqlfluff
-      dustypomerleau.rust-syntax
-      editorconfig.editorconfig
+    profiles.default.extensions = with pkgs.vscode-marketplace; [
+      # == AI & Copilot ==
       github.copilot
       github.copilot-chat
+      ms-windows-ai-studio.windows-ai-studio
+
+      # == Development Tools ==
+      editorconfig.editorconfig
       github.vscode-pull-request-github
+
+      # == Language Support ==
+      # Gleam
       gleam.gleam
+      # Jinja/HTML
+      samuelcolvin.jinjahtml
+      # Markdown
+      yzhang.markdown-all-in-one
+      # Nix
       jnoortheen.nix-ide
+      # Python
+      charliermarsh.ruff
       matangover.mypy
-      miguelsolorio.fluent-icons
       ms-python.python
       ms-python.vscode-pylance
       ms-python.vscode-python-envs
       ms-toolsai.jupyter
       ms-toolsai.jupyter-keymap
       ms-toolsai.jupyter-renderers
-      ms-windows-ai-studio.windows-ai-studio
-      naumovs.color-highlight
-      pkief.material-icon-theme
-      robertostermann.inline-parameters-extended
+      # Rust
+      dustypomerleau.rust-syntax
       rust-lang.rust-analyzer
-      samuelcolvin.jinjahtml
+      # SQL
+      dorzey.vscode-sqlfluff
+      # TOML
       tamasfe.even-better-toml
-      yzhang.markdown-all-in-one
+
+      # == Themes & UI ==
+      catppuccin.catppuccin-vsc
+      miguelsolorio.fluent-icons
+      pkief.material-icon-theme
+
+      # == Utilities ==
+      naumovs.color-highlight
+      robertostermann.inline-parameters-extended
     ];
 
-    userSettings = {
+    profiles.default.userSettings = {
       # == Debug ==
-      "debug.console.fontFamily" = "JetBrainsMono Nerd Font";
-      "debug.console.fontSize" = 15;
+      "debug.console.fontFamily" = config.stylix.fonts.monospace.name;
+      "debug.console.fontSize" = 16;
 
       # == Editor ==
       "editor.acceptSuggestionOnEnter" = "on";
       "editor.accessibilitySupport" = "off";
       "editor.codeLens" = true;
-      "editor.codeLensFontFamily" = "JetBrainsMono Nerd Font Mono";
-      "editor.fontFamily" = "JetBrainsMono Nerd Font";
+      "editor.codeLensFontFamily" = config.stylix.fonts.monospace.name;
+      "editor.fontFamily" = config.stylix.fonts.monospace.name;
       "editor.fontLigatures" = true;
-      "editor.fontSize" = 15;
+      "editor.fontSize" = 16;
       "editor.formatOnSave" = true;
       "editor.guides.bracketPairs" = true;
-      "editor.inlayHints.fontFamily" = "JetBrainsMono Nerd Font Mono";
+      "editor.inlayHints.fontFamily" = config.stylix.fonts.monospace.name;
       "editor.inlineSuggest.enabled" = true;
-      "editor.inlineSuggest.fontFamily" = "JetBrainsMono Nerd Font";
+      "editor.inlineSuggest.fontFamily" = config.stylix.fonts.monospace.name;
       "editor.inlineSuggest.showToolbar" = "always";
       "editor.lineNumbers" = "relative";
       "editor.minimap.enabled" = false;
@@ -101,7 +120,7 @@
       };
 
       # == SCM ==
-      "scm.inputFontSize" = 15;
+      "scm.inputFontSize" = 16;
 
       # == Search ==
       "search.defaultViewMode" = "tree";
@@ -111,26 +130,16 @@
 
       # == Terminal ==
       "terminal.explorerKind" = "external";
-      "terminal.external.osxExec" = "iTerm.app";
       "terminal.integrated.allowMnemonics" = true;
       "terminal.integrated.cursorStyle" = "line";
       "terminal.integrated.defaultProfile.osx" = "fish";
       "terminal.integrated.drawBoldTextInBrightColors" = false;
-      "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font";
-      "terminal.integrated.fontSize" = 15;
+      "terminal.integrated.fontFamily" = config.stylix.fonts.monospace.name;
+      "terminal.integrated.fontSize" = 16;
       "terminal.integrated.fontWeight" = "normal";
       "terminal.integrated.gpuAcceleration" = "on";
       "terminal.integrated.inheritEnv" = true;
       "terminal.integrated.lineHeight" = 1.1;
-      "terminal.integrated.profiles.osx" = {
-        fish = {
-          args = [
-            "-l"
-            "-i"
-          ];
-          path = "/opt/homebrew/bin/fish";
-        };
-      };
 
       # == Window ==
       "window.autoDetectColorScheme" = true;
@@ -138,9 +147,9 @@
       "window.customTitleBarVisibility" = "never";
 
       # == Workbench ==
-      "workbench.colorCustomizations" = {
-        "statusBar.foreground" = "#b7bdf8";
-      };
+      "workbench.colorTheme" = lib.mkForce "Catppuccin ${
+        lib.strings.toUpper (lib.substring 0 1 config.catppuccin.flavor)
+      }${lib.substring 1 (-1) config.catppuccin.flavor}";
       "workbench.editor.decorations.badges" = false;
       "workbench.editor.decorations.colors" = false;
       "workbench.editor.enablePreview" = false;
@@ -150,8 +159,11 @@
       "workbench.editorAssociations" = {
         "*.ipynb" = "jupyter-notebook";
       };
-      # "workbench.iconTheme" = "material-icon-theme";
+      "workbench.iconTheme" = "material-icon-theme";
       "workbench.layoutControl.enabled" = false;
+      "workbench.preferredDarkColorTheme" = lib.mkForce "Catppuccin ${
+        lib.strings.toUpper (lib.substring 0 1 config.catppuccin.flavor)
+      }${lib.substring 1 (-1) config.catppuccin.flavor}";
       "workbench.productIconTheme" = "fluent-icons";
       "workbench.settings.editor" = "json";
       "workbench.sideBar.location" = "right";
@@ -161,17 +173,14 @@
       # == Zen Mode ==
       "zenMode.hideLineNumbers" = false;
 
-      # == Extensions Catppuccin ==
-      "catppuccin.accentColor" = "mauve";
-
-      # == Extensions Git ==
+      # == Extensions - Git ==
       "git.autofetch" = true;
       "git.confirmSync" = false;
       "git.enableSmartCommit" = true;
       "git.ignoreLegacyWarning" = true;
       "git.openRepositoryInParentFolders" = "never";
 
-      # == Extensions GitHub ==
+      # == Extensions - GitHub ==
       "github.copilot.chat.commitMessageGeneration.instructions" = [
         { text = "Use conventional commit message format. Keep the first line under 50 characters."; }
       ];
@@ -187,21 +196,21 @@
       "githubPullRequests.createOnPublishBranch" = "never";
       "githubPullRequests.fileListLayout" = "tree";
 
-      # == Extensions Jupyter ==
+      # == Extensions - Jupyter ==
       "notebook.formatOnSave.enabled" = true;
       "notebook.lineNumbers" = "on";
       "notebook.output.textLineLimit" = 1000;
 
-      # == Extensions Material Icon Theme ==
+      # == Extensions - Material Icon Theme ==
       "material-icon-theme.activeIconPack" = "angular_ngrx";
       "material-icon-theme.folders.theme" = "specific";
       "material-icon-theme.hidesExplorerArrows" = false;
       "material-icon-theme.saturation" = 1;
 
-      # == Extensions MyPy ==
+      # == Extensions - MyPy ==
       "mypy.configFile" = "pyproject.toml";
 
-      # == Extensions Python ==
+      # == Extensions - Python ==
       "python.analysis.autoFormatStrings" = true;
       "python.analysis.autoImportCompletions" = true;
       "python.analysis.completeFunctionParens" = true;
@@ -212,11 +221,11 @@
       "python.languageServer" = "Pylance";
       "python.testing.pytestEnabled" = true;
 
-      # == Extensions SQLFluff ==
+      # == Extensions - SQLFluff ==
       "sqlfluff.config" = "pyproject.toml";
       "sqlfluff.env.useDotEnvFile" = true;
 
-      # == Extensions TOML ==
+      # == Extensions - TOML ==
       "evenBetterToml.formatter.allowedBlankLines" = 1;
       "evenBetterToml.formatter.arrayAutoCollapse" = true;
       "evenBetterToml.formatter.arrayTrailingComma" = false;
