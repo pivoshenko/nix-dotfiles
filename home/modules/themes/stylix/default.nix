@@ -14,10 +14,6 @@
     image = ../wallpapers/logo/logo_00.png;
 
     fonts = {
-      sizes = {
-        applications = 14;
-      };
-
       serif = {
         package = pkgs.noto-fonts;
         name = "Noto Serif";
