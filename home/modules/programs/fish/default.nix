@@ -43,14 +43,13 @@
       set -Ux GPG_TTY (tty)
       # Ensure gpg-agent knows about the current TTY
       gpg-connect-agent updatetty /bye >/dev/null 2>&1
-      # Update default colors
-      set -Ux LS_COLORS $(vivid generate catppuccin-macchiato)
 
       # == Functions ==
       # Delete backup files
       function bakclean
           fd -H -e ".dotdropbak" -t f -x rm
           fd -H -e ".bak" -t f -x rm
+          fd -H -e ".backup" -t f -x rm
       end
       # Iterate over sub-directories and pull Git repositories
       function rgp
