@@ -41,6 +41,7 @@
     ./modules/programs/ripgrep
     ./modules/programs/spicetify
     ./modules/programs/starship
+    ./modules/programs/stylus
     ./modules/programs/uv
     ./modules/programs/vesktop
     ./modules/programs/vscode
