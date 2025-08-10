@@ -32,6 +32,7 @@
     ./modules/programs/ghostty
     ./modules/programs/git
     ./modules/programs/helix
+    ./modules/programs/insomnia
     ./modules/programs/jq
     ./modules/programs/k9s
     ./modules/programs/keychain
@@ -44,6 +45,7 @@
     ./modules/programs/starship
     ./modules/programs/uv
     ./modules/programs/vesktop
+    ./modules/programs/vscode
     ./modules/programs/yazi
     ./modules/programs/zed
     ./modules/programs/zellij

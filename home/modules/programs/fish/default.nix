@@ -13,12 +13,12 @@
 
     plugins = [
       {
-        name = "z";
-        src = pkgs.fishPlugins.z;
-      }
-      {
         name = "fzf";
         src = pkgs.fishPlugins.fzf;
+      }
+      {
+        name = "z";
+        src = pkgs.fishPlugins.z;
       }
       {
         name = "fifc";
@@ -67,7 +67,7 @@
           fastfetch
       end
 
-      # == Vim Mode ==
+      # == Vim mode ==
       function fish_user_key_bindings
           # Execute this once per mode that `emacs` bindings should be used in
           fish_default_key_bindings -M insert

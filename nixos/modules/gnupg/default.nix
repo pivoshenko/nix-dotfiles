@@ -8,7 +8,7 @@
 {
   programs.gnupg.agent = {
     enable = true;
-    pinentryPackage = pkgs.pinentry-gtk2;
+    pinentryPackage = pkgs.pinentry-curses;
     enableSSHSupport = true;
     settings = {
       default-cache-ttl = 14400;

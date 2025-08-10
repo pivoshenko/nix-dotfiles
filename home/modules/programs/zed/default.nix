@@ -34,11 +34,19 @@
       base_keymap = "VSCode";
       vim_mode = true;
 
-      # == Fonts ==
-      buffer_font_family = config.stylix.fonts.monospace.name;
-      buffer_font_size = 16;
-      ui_font_family = config.stylix.fonts.monospace.name;
-      ui_font_size = 16;
+      # == AI ==
+      edit_predictions = {
+        copilot = {
+          proxy = null;
+          proxy_no_verify = null;
+        };
+        enabled_in_text_threads = false;
+        mode = "eager";
+      };
+
+      features = {
+        edit_prediction_provider = "zed";
+      };
 
       # == Editor ==
       relative_line_numbers = true;
@@ -69,6 +77,21 @@
         quick_actions = true;
         selections_menu = true;
       };
+
+      # == File types ==
+      file_types = {
+        SQL = [ "*.sql.j2" ];
+        TOML = [
+          "poetry.lock"
+          "uv.lock"
+        ];
+      };
+
+      # == Fonts ==
+      buffer_font_family = config.stylix.fonts.monospace.name;
+      buffer_font_size = config.stylix.fonts.sizes.applications;
+      ui_font_family = config.stylix.fonts.monospace.name;
+      ui_font_size = config.stylix.fonts.sizes.applications;
 
       # == Panels ==
       agent = {
@@ -107,29 +130,6 @@
 
       terminal = {
         button = false;
-      };
-
-      # == AI ==
-      edit_predictions = {
-        mode = "eager";
-        copilot = {
-          proxy = null;
-          proxy_no_verify = null;
-        };
-        enabled_in_text_threads = false;
-      };
-
-      features = {
-        edit_prediction_provider = "zed";
-      };
-
-      # == File Types ==
-      file_types = {
-        SQL = [ "*.sql.j2" ];
-        TOML = [
-          "poetry.lock"
-          "uv.lock"
-        ];
       };
 
       # == Telemetry ==

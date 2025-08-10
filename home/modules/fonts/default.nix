@@ -9,19 +9,19 @@
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
-    # Base fonts
+    # == Base fonts ==
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
 
-    # Developer fonts
+    # == Developer fonts ==
     jetbrains-mono
 
-    # Icon fonts
+    # == Icon fonts ==
     material-design-icons
     material-icons
 
-    # Nerd fonts
+    # == Nerd fonts ==
     nerd-fonts.iosevka-term
     nerd-fonts.space-mono
     nerd-fonts.jetbrains-mono

@@ -7,18 +7,20 @@
 
     catppuccin.url = "github:catppuccin/nix";
 
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix = {
-      url = "github:danth/stylix";
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
+    stylix = {
+      url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -33,9 +35,12 @@
       self,
       nixpkgs,
       nixpkgs-stable,
-      stylix,
       catppuccin,
       home-manager,
+      nix-vscode-extensions,
+      spicetify-nix,
+      stylix,
+      zen-browser,
       ...
     }@inputs:
     {
@@ -58,8 +63,8 @@
           modules = [
             ./hosts/nixos/default.nix
             catppuccin.nixosModules.catppuccin
-            stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
+            stylix.nixosModules.stylix
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
@@ -68,6 +73,11 @@
                 inherit inputs;
               };
               home-manager.backupFileExtension = "backup";
+            }
+            {
+              nixpkgs.overlays = [
+                nix-vscode-extensions.overlays.default
+              ];
             }
           ];
         };
