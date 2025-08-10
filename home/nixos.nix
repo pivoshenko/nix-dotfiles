@@ -53,8 +53,6 @@
     ./modules/programs/zoxide
 
     # == Services ==
-    ./modules/services/espanso
-    ./modules/services/gpg-agent
 
     # == Themes ==
     ./modules/themes/catppuccin
