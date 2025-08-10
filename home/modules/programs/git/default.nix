@@ -24,7 +24,6 @@
 
       core = {
         autocrlf = "input";
-        editor = "hx";
       };
 
       diff.colorMoved = "default";

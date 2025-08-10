@@ -37,8 +37,6 @@
     interactiveShellInit = ''
       # == Exports ==
       set -Ux XDG_CONFIG_HOME $HOME/.config
-      set -Ux EDITOR hx
-      set -Ux VISUAL $EDITOR
       # Get the current terminal and set it for GPG
       set -Ux GPG_TTY (tty)
       # Ensure gpg-agent knows about the current TTY
