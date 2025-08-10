@@ -40,6 +40,7 @@
       gtk.enable = true;
       qt.enable = false;
 
+      # == Programs ==
       bat.enable = false;
       firefox.enable = false;
       fish.enable = false;

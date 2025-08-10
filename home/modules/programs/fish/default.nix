@@ -11,16 +11,16 @@
 
     plugins = [
       {
+        name = "fifc";
+        src = pkgs.fishPlugins.fifc;
+      }
+      {
         name = "fzf";
         src = pkgs.fishPlugins.fzf;
       }
       {
         name = "z";
         src = pkgs.fishPlugins.z;
-      }
-      {
-        name = "fifc";
-        src = pkgs.fishPlugins.fifc;
       }
     ];
 
