@@ -2,17 +2,26 @@
   description = "pivoshenko's NixOS and nix-darwin configurations";
 
   inputs = {
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin = {
+      url = "github:catppuccin/nix";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs/nixos-unstable";
+    };
 
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nixpkgs-stable = {
+      url = "github:NixOS/nixpkgs/nixos-25.05";
+    };
+
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+    };
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
