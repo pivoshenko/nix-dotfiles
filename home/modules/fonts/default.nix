@@ -9,11 +9,7 @@
   home.packages = with pkgs; [
     # == Base fonts ==
     noto-fonts
-    noto-fonts-cjk-sans
     noto-fonts-emoji
-
-    # == Developer fonts ==
-    jetbrains-mono
 
     # == Icon fonts ==
     material-design-icons
