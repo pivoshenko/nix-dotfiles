@@ -10,5 +10,6 @@
     flavor = "macchiato";
 
     vscode.profiles.default.icons.enable = false;
+    zed.icons.enable = false;
   };
 }

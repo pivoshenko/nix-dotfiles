@@ -9,6 +9,7 @@
 
     extensions = [
       "catppuccin"
+      "material-icon-theme"
       "docker-compose"
       "dockerfile"
       "env"
@@ -19,7 +20,6 @@
       "kdl"
       "log"
       "lua"
-      "material-icon-theme"
       "nix"
       "ruff"
       "sql"
@@ -27,6 +27,8 @@
     ];
 
     userSettings = {
+      icon_theme = "Material Icon Theme";
+
       # == General ==
       auto_update = true;
       base_keymap = "VSCode";
@@ -47,10 +49,6 @@
       };
 
       # == Editor ==
-      relative_line_numbers = true;
-      show_whitespaces = "all";
-      soft_wrap = "editor_width";
-
       autosave = {
         after_delay = {
           milliseconds = 500;
@@ -62,6 +60,10 @@
         enable_preview_from_file_finder = false;
         enabled = false;
       };
+
+      relative_line_numbers = true;
+      show_whitespaces = "all";
+      soft_wrap = "editor_width";
 
       tabs = {
         activate_on_close = "history";
@@ -87,9 +89,9 @@
 
       # == Fonts ==
       buffer_font_family = config.stylix.fonts.monospace.name;
-      buffer_font_size = config.stylix.fonts.sizes.applications;
+      buffer_font_size = 16;
       ui_font_family = config.stylix.fonts.monospace.name;
-      ui_font_size = config.stylix.fonts.sizes.applications;
+      ui_font_size = 16;
 
       # == Panels ==
       agent = {
