@@ -37,20 +37,25 @@
         name = "Noto Color Emoji";
       };
     };
+
     targets = {
       bat.enable = false;
+      firefox.enable = false;
       fish.enable = false;
       fzf.enable = false;
       ghostty.enable = false;
       helix.enable = false;
-      hyprland.enable = false;
       k9s.enable = false;
-      spicetify.enable = true;
+      lazygit.enable = false;
       starship.enable = false;
       vscode.enable = false;
       yazi.enable = false;
       zed.enable = false;
       zellij.enable = false;
+      zen-browser = {
+        enable = true;
+        profileNames = [ "default" ];
+      };
     };
   };
 }
