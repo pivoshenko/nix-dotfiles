@@ -37,8 +37,11 @@
 
     targets = {
       # == Desktop ==
+      hyprland.enable = false;
       gtk.enable = true;
+      rofi.enable = false;
       qt.enable = false;
+      waybar.enable = false;
 
       # == Programs ==
       bat.enable = false;
@@ -47,7 +50,6 @@
       fzf.enable = false;
       ghostty.enable = false;
       helix.enable = false;
-      hyprland.enable = false;
       k9s.enable = false;
       lazygit.enable = false;
       starship.enable = false;

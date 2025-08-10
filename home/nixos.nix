@@ -16,6 +16,9 @@
     # == Desktop ==
     ./modules/desktop/gtk
     ./modules/desktop/qt
+    ./modules/desktop/rofi
+    ./modules/desktop/waybar
+    ./modules/desktop/wayland
 
     # == Programs ==
     ./modules/programs/bat
