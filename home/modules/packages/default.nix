@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   pkgs,
   ...
 }:
@@ -30,6 +28,8 @@
     # == LSPs ==
     marksman
     mypy
+    nil
+    nixd
     nixfmt-rfc-style
     sqlfluff
     taplo
