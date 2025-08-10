@@ -4,7 +4,7 @@
 
 {
   programs.ssh = {
-    startAgent = true;
+    startAgent = false;
     extraConfig = ''
       AddKeysToAgent yes
       IdentitiesOnly yes
