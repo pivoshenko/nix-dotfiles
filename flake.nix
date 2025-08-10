@@ -2,17 +2,17 @@
   description = "pivoshenko's NixOS and nix-darwin configurations";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
-
     catppuccin.url = "github:catppuccin/nix";
-
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
+
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -32,12 +32,12 @@
 
   outputs =
     {
-      self,
-      nixpkgs,
-      nixpkgs-stable,
       catppuccin,
       home-manager,
+      nixpkgs,
+      nixpkgs-stable,
       nix-vscode-extensions,
+      self,
       spicetify-nix,
       stylix,
       zen-browser,

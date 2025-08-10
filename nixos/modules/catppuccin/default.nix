@@ -1,7 +1,4 @@
 {
-  config,
-  lib,
-  pkgs,
   ...
 }:
 
@@ -11,9 +8,5 @@
 
     accent = "mauve";
     flavor = "macchiato";
-
-    grub.enable = true;
-    plymouth.enable = true;
-    tty.enable = true;
   };
 }

@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   pkgs,
   ...
 }:
@@ -8,7 +6,6 @@
 let
   zjstatusVersion = "v0.21.0";
   zjstatusUrl = "https://github.com/dj95/zjstatus/releases/download/${zjstatusVersion}/zjstatus.wasm";
-  inherit (config.lib.stylix) colors;
 in
 {
   programs.zellij = {
