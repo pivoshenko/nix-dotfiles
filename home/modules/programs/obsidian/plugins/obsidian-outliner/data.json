@@ -1,0 +1,12 @@
+{
+  "betterEnter": true,
+  "betterTab": true,
+  "debug": false,
+  "dnd": true,
+  "listLineAction": "toggle-folding",
+  "listLines": true,
+  "previousRelease": null,
+  "selectAll": true,
+  "stickCursor": "bullet-and-checkbox",
+  "styleLists": true
+}

@@ -1,0 +1,12 @@
+{
+  "catppuccin-font-styles@@ctp-bold": "var(--ctp-mauve)",
+  "catppuccin-font-styles@@ctp-italic": "var(--ctp-peach)",
+  "catppuccin-heading-settings@@ctp-h1": "var(--ctp-accent)",
+  "catppuccin-heading-settings@@ctp-page-title": "var(--ctp-accent)",
+  "catppuccin-interface-styles@@ctp-bold-folder-title": true,
+  "catppuccin-pdf@@ctp-pdf-darken": false,
+  "catppuccin-pdf@@ctp-seamless-pdf": true,
+  "catppuccin-tag-styles@@ctp-tag-pill": true,
+  "catppuccin-theme-settings@@catppuccin-theme-accents": "ctp-accent-mauve",
+  "catppuccin-theme-settings@@catppuccin-theme-dark": "ctp-macchiato"
+}
