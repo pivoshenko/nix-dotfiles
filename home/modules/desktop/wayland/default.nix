@@ -49,11 +49,6 @@
           size = 3;
           passes = 1;
         };
-
-        drop_shadow = true;
-        shadow_range = 4;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(1a1a1aee)";
       };
 
       animations = {
@@ -101,9 +96,10 @@
         "$mainMod, M, exit"
         "$mainMod, E, exec, dolphin"
         "$mainMod, V, togglefloating"
-        "$mainMod, R, exec, wofi --show drun"
+        "$mainMod, R, exec, rofi -show drun"
         "$mainMod, P, pseudo"
         "$mainMod, J, togglesplit"
+        "$mainMod, W, killactive"
 
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
