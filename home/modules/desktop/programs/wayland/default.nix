@@ -1,4 +1,5 @@
 {
+  config,
   ...
 }:
 
@@ -22,20 +23,21 @@
         kb_rules = "";
 
         follow_mouse = 1;
+        sensitivity = 0;
 
         touchpad = {
           natural_scroll = false;
         };
-
-        sensitivity = 0;
       };
 
       general = {
         gaps_in = 5;
         gaps_out = 20;
+
         border_size = 2;
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
+        "col.active_border" =
+          "rgba(${config.lib.stylix.colors.base0E-hex}ee) rgba(${config.lib.stylix.colors.base0D-hex}ee) 45deg";
+        "col.inactive_border" = "rgba(${config.lib.stylix.colors.base03-hex}aa)";
 
         layout = "dwindle";
         allow_tearing = false;
@@ -91,21 +93,25 @@
       "$mainMod" = "SUPER";
 
       bind = [
-        "$mainMod, Q, exec, ghostty"
-        "$mainMod, C, killactive"
-        "$mainMod, M, exit"
-        "$mainMod, E, exec, dolphin"
-        "$mainMod, V, togglefloating"
+        # == Applications ==
+        "$mainMod, T, exec, ghostty"
         "$mainMod, R, exec, rofi -show drun"
+
+        # == Window management ==
+        "$mainMod, Q, killactive"
+        "$mainMod, M, exit"
+        "$mainMod, V, togglefloating"
         "$mainMod, P, pseudo"
         "$mainMod, J, togglesplit"
-        "$mainMod, W, killactive"
 
+        # == Focus movement ==
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
+        "$mainMod, TAB, exec, rofi -show window"
 
+        # == Workspace switching ==
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
         "$mainMod, 3, workspace, 3"
@@ -117,6 +123,7 @@
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
 
+        # == Move windows to workspace ==
         "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
         "$mainMod SHIFT, 3, movetoworkspace, 3"
@@ -128,13 +135,16 @@
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
 
+        # == Special workspace ==
         "$mainMod, S, togglespecialworkspace, magic"
         "$mainMod SHIFT, S, movetoworkspace, special:magic"
 
+        # == Mouse wheel workspace switching ==
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
       ];
 
+      # == Mouse bindings ==
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
