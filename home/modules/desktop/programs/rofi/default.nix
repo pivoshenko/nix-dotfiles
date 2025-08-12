@@ -14,6 +14,7 @@
     extraConfig = {
       drun-show-actions = true;
       show-icons = true;
+      window-format = "{t} [{c}]";
     };
 
     font = "${config.stylix.fonts.monospace.name} 14";

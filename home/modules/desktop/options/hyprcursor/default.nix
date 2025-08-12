@@ -3,7 +3,7 @@
 }:
 
 {
-  services.hyprpaper = {
+  home.pointerCursor.hyprcursor = {
     enable = true;
   };
 }

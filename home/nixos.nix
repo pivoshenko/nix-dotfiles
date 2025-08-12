@@ -13,6 +13,9 @@
     ./modules/fonts
     ./modules/packages
 
+    # == Desktop options ==
+    ./modules/desktop/options/hyprcursor
+
     # == Desktop programs ==
     ./modules/desktop/programs/gtk
     ./modules/desktop/programs/qt
