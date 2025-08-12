@@ -32,6 +32,9 @@
       # == Shell ==
       shell-integration = "fish";
 
+      # == UI ==
+      gtk-titlebar = false;
+
       # == Window ==
       window-theme = "system";
       window-title-font-family = config.stylix.fonts.monospace.name;
