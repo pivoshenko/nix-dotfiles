@@ -8,20 +8,16 @@
     enable = true;
     autoEnable = true;
 
-    polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
 
     image = ../wallpapers/logo/logo_00.png;
 
-    fonts = {
-      serif = {
-        package = pkgs.noto-fonts;
-        name = "Noto Serif";
-      };
+    polarity = "dark";
 
-      sansSerif = {
-        package = pkgs.noto-fonts;
-        name = "Noto Sans";
+    fonts = {
+      emoji = {
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
       };
 
       monospace = {
@@ -29,18 +25,24 @@
         name = "JetBrainsMono Nerd Font";
       };
 
-      emoji = {
-        package = pkgs.noto-fonts-emoji;
-        name = "Noto Color Emoji";
+      sansSerif = {
+        package = pkgs.noto-fonts;
+        name = "Noto Sans";
+      };
+
+      serif = {
+        package = pkgs.noto-fonts;
+        name = "Noto Serif";
       };
     };
 
     targets = {
       # == Desktop ==
-      hyprland.enable = false;
       gtk.enable = true;
-      rofi.enable = false;
+      hyprland.enable = false;
+      hyprpaper.enable = true;
       qt.enable = false;
+      rofi.enable = false;
       waybar.enable = false;
 
       # == Programs ==

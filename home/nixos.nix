@@ -13,12 +13,15 @@
     ./modules/fonts
     ./modules/packages
 
-    # == Desktop ==
-    ./modules/desktop/gtk
-    ./modules/desktop/qt
-    ./modules/desktop/rofi
-    ./modules/desktop/waybar
-    ./modules/desktop/wayland
+    # == Desktop programs ==
+    ./modules/desktop/programs/gtk
+    ./modules/desktop/programs/qt
+    ./modules/desktop/programs/rofi
+    ./modules/desktop/programs/waybar
+    ./modules/desktop/programs/wayland
+
+    # == Desktop services ==
+    ./modules/desktop/services/hyprpaper
 
     # == Programs ==
     ./modules/programs/bat
