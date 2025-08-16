@@ -3,6 +3,17 @@
   ...
 }:
 
+let
+  colors = {
+    rgba = {
+      mauve = "rgba(${config.lib.stylix.colors.base0E-hex}ee)";
+      blue = "rgba(${config.lib.stylix.colors.base0D-hex}ee)";
+      surface1 = "rgba(${config.lib.stylix.colors.base03-hex}aa)";
+    };
+  };
+
+  mainMod = "SUPER";
+in
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -35,9 +46,8 @@
         gaps_out = 20;
 
         border_size = 2;
-        "col.active_border" =
-          "rgba(${config.lib.stylix.colors.base0E-hex}ee) rgba(${config.lib.stylix.colors.base0D-hex}ee) 45deg";
-        "col.inactive_border" = "rgba(${config.lib.stylix.colors.base03-hex}aa)";
+        "col.active_border" = "${colors.rgba.mauve} ${colors.rgba.blue} 45deg";
+        "col.inactive_border" = "${colors.rgba.surface1}";
 
         layout = "dwindle";
         allow_tearing = false;
@@ -90,64 +100,63 @@
         "suppressevent maximize, class:.*"
       ];
 
-      "$mainMod" = "SUPER";
 
       bind = [
         # == Applications ==
-        "$mainMod, T, exec, ghostty"
-        "$mainMod, R, exec, rofi -show drun"
+        "${mainMod}, T, exec, ghostty"
+        "${mainMod}, R, exec, rofi -show drun"
 
         # == Window management ==
-        "$mainMod, Q, killactive"
-        "$mainMod, M, exit"
-        "$mainMod, V, togglefloating"
-        "$mainMod, P, pseudo"
-        "$mainMod, J, togglesplit"
+        "${mainMod}, Q, killactive"
+        "${mainMod}, M, exit"
+        "${mainMod}, V, togglefloating"
+        "${mainMod}, P, pseudo"
+        "${mainMod}, J, togglesplit"
 
         # == Focus movement ==
-        "$mainMod, left, movefocus, l"
-        "$mainMod, right, movefocus, r"
-        "$mainMod, up, movefocus, u"
-        "$mainMod, down, movefocus, d"
-        "$mainMod, TAB, exec, rofi -show window"
+        "${mainMod}, left, movefocus, l"
+        "${mainMod}, right, movefocus, r"
+        "${mainMod}, up, movefocus, u"
+        "${mainMod}, down, movefocus, d"
+        "${mainMod}, TAB, exec, rofi -show window"
 
         # == Workspace switching ==
-        "$mainMod, 1, workspace, 1"
-        "$mainMod, 2, workspace, 2"
-        "$mainMod, 3, workspace, 3"
-        "$mainMod, 4, workspace, 4"
-        "$mainMod, 5, workspace, 5"
-        "$mainMod, 6, workspace, 6"
-        "$mainMod, 7, workspace, 7"
-        "$mainMod, 8, workspace, 8"
-        "$mainMod, 9, workspace, 9"
-        "$mainMod, 0, workspace, 10"
+        "${mainMod}, 1, workspace, 1"
+        "${mainMod}, 2, workspace, 2"
+        "${mainMod}, 3, workspace, 3"
+        "${mainMod}, 4, workspace, 4"
+        "${mainMod}, 5, workspace, 5"
+        "${mainMod}, 6, workspace, 6"
+        "${mainMod}, 7, workspace, 7"
+        "${mainMod}, 8, workspace, 8"
+        "${mainMod}, 9, workspace, 9"
+        "${mainMod}, 0, workspace, 10"
 
         # == Move windows to workspace ==
-        "$mainMod SHIFT, 1, movetoworkspace, 1"
-        "$mainMod SHIFT, 2, movetoworkspace, 2"
-        "$mainMod SHIFT, 3, movetoworkspace, 3"
-        "$mainMod SHIFT, 4, movetoworkspace, 4"
-        "$mainMod SHIFT, 5, movetoworkspace, 5"
-        "$mainMod SHIFT, 6, movetoworkspace, 6"
-        "$mainMod SHIFT, 7, movetoworkspace, 7"
-        "$mainMod SHIFT, 8, movetoworkspace, 8"
-        "$mainMod SHIFT, 9, movetoworkspace, 9"
-        "$mainMod SHIFT, 0, movetoworkspace, 10"
+        "${mainMod} SHIFT, 1, movetoworkspace, 1"
+        "${mainMod} SHIFT, 2, movetoworkspace, 2"
+        "${mainMod} SHIFT, 3, movetoworkspace, 3"
+        "${mainMod} SHIFT, 4, movetoworkspace, 4"
+        "${mainMod} SHIFT, 5, movetoworkspace, 5"
+        "${mainMod} SHIFT, 6, movetoworkspace, 6"
+        "${mainMod} SHIFT, 7, movetoworkspace, 7"
+        "${mainMod} SHIFT, 8, movetoworkspace, 8"
+        "${mainMod} SHIFT, 9, movetoworkspace, 9"
+        "${mainMod} SHIFT, 0, movetoworkspace, 10"
 
         # == Special workspace ==
-        "$mainMod, S, togglespecialworkspace, magic"
-        "$mainMod SHIFT, S, movetoworkspace, special:magic"
+        "${mainMod}, S, togglespecialworkspace, magic"
+        "${mainMod} SHIFT, S, movetoworkspace, special:magic"
 
         # == Mouse wheel workspace switching ==
-        "$mainMod, mouse_down, workspace, e+1"
-        "$mainMod, mouse_up, workspace, e-1"
+        "${mainMod}, mouse_down, workspace, e+1"
+        "${mainMod}, mouse_up, workspace, e-1"
       ];
 
       # == Mouse bindings ==
       bindm = [
-        "$mainMod, mouse:272, movewindow"
-        "$mainMod, mouse:273, resizewindow"
+        "${mainMod}, mouse:272, movewindow"
+        "${mainMod}, mouse:273, resizewindow"
       ];
     };
   };
