@@ -3,10 +3,12 @@
 }:
 
 {
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
 
-  services.xserver.xkb = {
-    layout = "gb";
-    variant = "";
+    xkb = {
+      layout = "gb";
+      variant = "";
+    };
   };
 }

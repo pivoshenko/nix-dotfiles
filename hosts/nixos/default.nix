@@ -3,7 +3,6 @@
   ...
 }:
 
-# TODO Add system auto upgrade
 {
   imports = [
     ../../nixos
