@@ -16,6 +16,7 @@
     # == Desktop ==
     ./modules/desktop/gtk
     ./modules/desktop/hyprcursor
+    ./modules/desktop/hyprpanel
     ./modules/desktop/hyprpaper
     ./modules/desktop/qt
     ./modules/desktop/rofi
