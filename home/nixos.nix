@@ -13,18 +13,14 @@
     ./modules/fonts
     ./modules/packages
 
-    # == Desktop options ==
-    ./modules/desktop/options/hyprcursor
-
-    # == Desktop programs ==
-    ./modules/desktop/programs/gtk
-    ./modules/desktop/programs/qt
-    ./modules/desktop/programs/rofi
-    ./modules/desktop/programs/waybar
-    ./modules/desktop/programs/wayland
-
-    # == Desktop services ==
-    ./modules/desktop/services/hyprpaper
+    # == Desktop ==
+    ./modules/desktop/gtk
+    ./modules/desktop/hyprcursor
+    ./modules/desktop/hyprpaper
+    ./modules/desktop/qt
+    ./modules/desktop/rofi
+    ./modules/desktop/waybar
+    ./modules/desktop/wayland
 
     # == Programs ==
     ./modules/programs/bat
@@ -50,7 +46,6 @@
     ./modules/programs/ripgrep
     ./modules/programs/spicetify
     ./modules/programs/starship
-    ./modules/programs/stylus
     ./modules/programs/uv
     ./modules/programs/vesktop
     ./modules/programs/vscode
@@ -65,6 +60,8 @@
     # == Themes ==
     ./modules/themes/catppuccin
     ./modules/themes/stylix
+    ./modules/themes/stylus
+    ./modules/themes/wallpapers
   ];
 
   home.username = "pivoshenko";

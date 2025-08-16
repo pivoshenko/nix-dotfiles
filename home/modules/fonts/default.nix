@@ -17,7 +17,7 @@
 
     # == Nerd fonts ==
     nerd-fonts.iosevka-term
-    nerd-fonts.space-mono
     nerd-fonts.jetbrains-mono
+    nerd-fonts.space-mono
   ];
 }

@@ -1,28 +1,38 @@
 {
-  lib,
   pkgs,
   ...
 }:
 
+let
+  insomnia-catppuccin = pkgs.stdenv.mkDerivation {
+    pname = "insomnia-plugin-catppuccin";
+    version = "local";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "catppuccin";
+      repo = "insomnia";
+      rev = "main";
+      sha256 = "sha256-HC+nknnnOhtYU3XP8k2tlC7QwSgX2sViZHRMa5E0XYk=";
+    };
+
+    buildInputs = [
+      pkgs.nodejs
+      pkgs.nodePackages.npm
+    ];
+
+    buildPhase = ''
+      npm install --production
+    '';
+
+    installPhase = ''
+      mkdir -p $out
+      cp -r . $out/
+    '';
+  };
+in
 {
-  home.activation.insomniaPlugins = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    $DRY_RUN_CMD mkdir -p "$HOME/.config/Insomnia/plugins"
-
-    # Check if the plugin already exists and remove it if it does
-    if [ -d "$HOME/.config/Insomnia/plugins/insomnia-plugin-catppuccin" ]; then
-      $VERBOSE_ECHO "Removing existing Insomnia Catppuccin plugin..."
-      $DRY_RUN_CMD rm -rf "$HOME/.config/Insomnia/plugins/insomnia-plugin-catppuccin"
-    fi
-
-    # Clone the plugin repository using HTTPS (more reliable during build)
-    $VERBOSE_ECHO "Installing Insomnia Catppuccin plugin..."
-    $DRY_RUN_CMD ${pkgs.git}/bin/git clone https://github.com/catppuccin/insomnia.git "$HOME/.config/Insomnia/plugins/insomnia-plugin-catppuccin"
-
-    # Install npm dependencies
-    if [ -d "$HOME/.config/Insomnia/plugins/insomnia-plugin-catppuccin" ]; then
-      $VERBOSE_ECHO "Installing plugin dependencies..."
-      cd "$HOME/.config/Insomnia/plugins/insomnia-plugin-catppuccin"
-      $DRY_RUN_CMD ${pkgs.nodejs}/bin/npm install
-    fi
-  '';
+  xdg.configFile."Insomnia/plugins/insomnia-plugin-catppuccin" = {
+    source = insomnia-catppuccin;
+    recursive = true;
+  };
 }

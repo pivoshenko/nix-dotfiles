@@ -19,17 +19,14 @@
         package = pkgs.noto-fonts-emoji;
         name = "Noto Color Emoji";
       };
-
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrainsMono Nerd Font";
       };
-
       sansSerif = {
         package = pkgs.noto-fonts;
         name = "Noto Sans";
       };
-
       serif = {
         package = pkgs.noto-fonts;
         name = "Noto Serif";

@@ -144,7 +144,8 @@
       # == Window ==
       "window.autoDetectColorScheme" = true;
       "window.commandCenter" = false;
-      "window.customTitleBarVisibility" = "never";
+      "window.customTitleBarVisibility" = "always";
+      "window.titleBarStyle" = "custom";
 
       # == Workbench ==
       "workbench.colorTheme" = lib.mkForce "Catppuccin ${

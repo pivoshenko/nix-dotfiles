@@ -18,14 +18,12 @@
     # == Databases ==
     duckdb
 
-    # == Desktop Environment ==
-
-    # == IDEs ==
+    # == Development tools ==
     dbeaver-bin
     insomnia
     mongodb-compass
 
-    # == LSPs ==
+    # == Language servers ==
     marksman
     mypy
     nil

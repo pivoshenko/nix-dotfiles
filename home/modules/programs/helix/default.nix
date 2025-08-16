@@ -15,12 +15,13 @@
         cursorline = true;
         end-of-line-diagnostics = "hint";
         line-number = "relative";
-        mouse = true;
         rulers = [ 100 ];
+
         shell = [
           "fish"
           "-c"
         ];
+
         true-color = true;
 
         cursor-shape = {

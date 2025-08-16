@@ -5,7 +5,9 @@
 }:
 
 let
-  colorMauve = "38;2;${config.lib.stylix.colors.base0E-rgb-r};${config.lib.stylix.colors.base0E-rgb-g};${config.lib.stylix.colors.base0E-rgb-b}";
+  colors = {
+    mauve = "38;2;${config.lib.stylix.colors.base0E-rgb-r};${config.lib.stylix.colors.base0E-rgb-g};${config.lib.stylix.colors.base0E-rgb-b}";
+  };
 in
 {
   programs.fastfetch = {
@@ -23,7 +25,7 @@ in
           $3
         '';
         color = {
-          "3" = colorMauve;
+          "3" = colors.mauve;
         };
       };
 
@@ -35,31 +37,31 @@ in
         {
           type = "os";
           key = "";
-          keyColor = colorMauve;
+          keyColor = colors.mauve;
           format = "{name} {version}";
         }
         {
           type = "cpu";
           key = "󰘚";
-          keyColor = colorMauve;
+          keyColor = colors.mauve;
           showPeCoreCount = true;
           temp = true;
         }
         {
           type = "gpu";
           key = "󰡷";
-          keyColor = colorMauve;
+          keyColor = colors.mauve;
           temp = true;
         }
         {
           type = "memory";
           key = "󰍛";
-          keyColor = colorMauve;
+          keyColor = colors.mauve;
         }
         {
           type = "disk";
           key = "󰋊";
-          keyColor = colorMauve;
+          keyColor = colors.mauve;
           folders = "/";
         }
         {
@@ -68,7 +70,7 @@ in
         {
           type = "media";
           key = "";
-          keyColor = colorMauve;
+          keyColor = colors.mauve;
         }
       ];
     };

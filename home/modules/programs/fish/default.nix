@@ -45,13 +45,13 @@
       # == Functions ==
       # Delete backup files
       function bakclean
-          fd -H -e ".dotdropbak" -t f -x rm
-          fd -H -e ".bak" -t f -x rm
-          fd -H -e ".backup" -t f -x rm
+        fd -H -e ".dotdropbak" -t f -x rm
+        fd -H -e ".bak" -t f -x rm
+        fd -H -e ".backup" -t f -x rm
       end
       # Iterate over sub-directories and pull Git repositories
       function rgp
-          find . -name ".git" -type d | sed 's/\/\.git//' | xargs -P10 -I{} sh -c 'git -C {} fetch --all && git -C {} pull'
+        command find . -name ".git" -type d | sed 's/\/\.git//' | xargs -P10 -I{} sh -c 'git -C {} fetch --all && git -C {} pull'
       end
       # Reload Fish configuration
       function fish
@@ -59,19 +59,19 @@
       end
       # Display system information on shell startup
       function fish_greeting
-          fastfetch
+        fastfetch
       end
 
       # == Vim mode ==
       function fish_user_key_bindings
-          # Execute this once per mode that `emacs` bindings should be used in
-          fish_default_key_bindings -M insert
+        # Execute this once per mode that `emacs` bindings should be used in
+        fish_default_key_bindings -M insert
 
-          # Then execute the `vi` bindings so they take precedence when there's a conflict
-          # Without `--no-erase`, `fish_vi_key_bindings` will default to
-          # Resetting all bindings
-          # The argument specifies the initial mode (`insert`, `default` or `visual`)
-          fish_vi_key_bindings --no-erase insert
+        # Then execute the `vi` bindings so they take precedence when there's a conflict
+        # Without `--no-erase`, `fish_vi_key_bindings` will default to
+        # Resetting all bindings
+        # The argument specifies the initial mode (`insert`, `default` or `visual`)
+        fish_vi_key_bindings --no-erase insert
       end
       # Emulates Vim's cursor shape behavior
       set fish_cursor_default block
