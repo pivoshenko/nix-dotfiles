@@ -13,16 +13,22 @@ let
   };
 
   mainMod = "SUPER";
+  altMod = "ALT";
+  ctrlMod = "CONTROL";
+  shiftMod = "SHIFT";
 in
 {
   wayland.windowManager.hyprland = {
     enable = true;
 
     settings = {
-      monitor = ",preferred,auto,auto";
+      monitor = [
+        "eDP-1,2560x1600,auto,1.0"
+        "DP-3,2560x1440,auto,1.0"
+      ];
 
       env = [
-        "XCURSOR_SIZE,24"
+        "XCURSOR_SIZE,16"
         "QT_QPA_PLATFORMTHEME,qt5ct"
       ];
 
@@ -100,25 +106,22 @@ in
         "suppressevent maximize, class:.*"
       ];
 
-
       bind = [
         # == Applications ==
-        "${mainMod}, T, exec, ghostty"
-        "${mainMod}, R, exec, rofi -show drun"
+        "${mainMod}, SPACE, exec, rofi -show drun"
+        "${mainMod}, TAB, exec, rofi -show window"
 
         # == Window management ==
         "${mainMod}, Q, killactive"
-        "${mainMod}, M, exit"
-        "${mainMod}, V, togglefloating"
+        "${mainMod}, F, togglefloating"
         "${mainMod}, P, pseudo"
-        "${mainMod}, J, togglesplit"
+        "${mainMod}, /, togglesplit"
 
         # == Focus movement ==
         "${mainMod}, left, movefocus, l"
         "${mainMod}, right, movefocus, r"
         "${mainMod}, up, movefocus, u"
         "${mainMod}, down, movefocus, d"
-        "${mainMod}, TAB, exec, rofi -show window"
 
         # == Workspace switching ==
         "${mainMod}, 1, workspace, 1"
@@ -147,10 +150,6 @@ in
         # == Special workspace ==
         "${mainMod}, S, togglespecialworkspace, magic"
         "${mainMod} SHIFT, S, movetoworkspace, special:magic"
-
-        # == Mouse wheel workspace switching ==
-        "${mainMod}, mouse_down, workspace, e+1"
-        "${mainMod}, mouse_up, workspace, e-1"
       ];
 
       # == Mouse bindings ==
